@@ -20,7 +20,7 @@
         "RTSP_PATHS_ALL_RUNONDEMAND": "str",
         "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "str"
     },
-    "image": "aler9/rtsp-simple-server:v0.20.0-armv7",
+    "image": "aler9/rtsp-simple-server:v0.20.0",
     "ingress": false,
     "panel_icon": "mdi:cctv",
     "panel_title": "RTSP Server",
