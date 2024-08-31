@@ -1,6 +1,6 @@
 {
     "name": "RTSP Simple Server Add-on",
-    "version": "0.20.1",
+    "version": "v0.20.1",
     "slug": "rtsp_simple_server",
     "description": "Create RTSP server to broadcast streams, thanks to @aler9 - https://github.com/aler9/rtsp-simple-server",
     "arch": ["armv7", "aarch64", "amd64", "armhf"],
@@ -20,7 +20,7 @@
         "RTSP_PATHS_ALL_RUNONDEMAND": "str",
         "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "str"
     },
-    "image": "aler9/rtsp-simple-server",
+    "image": "aler9/rtsp-simple-server:0.20.1",
     "ingress": false,
     "panel_icon": "mdi:cctv",
     "panel_title": "RTSP Server",
