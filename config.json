@@ -33,6 +33,5 @@
     "timeout": 10,
     "init": true,
     "advanced": false,
-    "auto_update": true,
-    "codenotary": "[email protected]"
+    "auto_update": true
 }
