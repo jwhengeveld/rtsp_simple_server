@@ -1,25 +1,38 @@
 {
     "name": "RTSP Simple Server Add-on",
-    "version": "v0.17.6",
+    "version": "0.20.0",
     "slug": "rtsp_simple_server",
     "description": "Create RTSP server to broadcast streams, thanks to @aler9 - https://github.com/aler9/rtsp-simple-server",
     "arch": ["armv7", "aarch64", "amd64", "armhf", "arm64"],
+    "startup": "application",
     "boot": "auto",
-    "legacy": true,
     "ports": {
         "8554/tcp": 8554,
         "1935/tcp": 1935
     },
-    "startup": "application",
     "options": {
         "RTSP_PROTOCOLS": "tcp",
         "RTSP_PATHS_ALL_RUNONDEMAND": "echo 'incoming'",
         "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "yes"
     },
     "schema": {
-        "RTSP_PROTOCOLS": "list(tcp)",
-        "RTSP_PATHS_ALL_RUNONDEMAND": "list(echo 'incoming')",
-        "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "list(yes)"
+        "RTSP_PROTOCOLS": "str",
+        "RTSP_PATHS_ALL_RUNONDEMAND": "str",
+        "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "str"
     },
-    "image": "aler9/rtsp-simple-server:v0.20.0-armv7"
+    "image": "aler9/rtsp-simple-server:v0.20.0-armv7",
+    "ingress": false,
+    "panel_icon": "mdi:cctv",
+    "panel_title": "RTSP Server",
+    "panel_admin": true,
+    "gpio": false,
+    "udev": false,
+    "stage": "stable",
+    "healthcheck": "http://localhost:8554/",
+    "apparmor": true,
+    "timeout": 10,
+    "init": true,
+    "advanced": false,
+    "auto_update": true,
+    "codenotary": "[email protected]"
 }
