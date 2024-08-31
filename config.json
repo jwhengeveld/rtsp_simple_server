@@ -1,30 +1,25 @@
 {
-  "name": "RTSP Simple Server Add-on",
-  "version": "v0.17.6",
-  "slug": "rtsp_simple_server",
-  "description": "Create RTSP server to broadcast streams, thanks to @aler9 - https://github.com/aler9/rtsp-simple-server",
-  "arch": [
-    "aarch64",
-    "amd64",
-    "armhf",
-    "armv7"
-  ],
-"boot": "auto",
-  "legacy": true,
-  "ports": {
-    "8554/tcp": 8554,
-    "1935/tcp": 1935
-  },
-  "startup": "application",
-  "options": {
-	  "RTSP_PROTOCOLS": "tcp",
-	  "RTSP_PATHS_ALL_RUNONDEMAND": "echo 'incoming'",
-	  "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "yes"
-  },
-  "schema": {
-	  "RTSP_PROTOCOLS": "list(tcp)",
-	  "RTSP_PATHS_ALL_RUNONDEMAND": "list(echo 'incoming')",
-	  "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "list(yes)"
-  },
-  "image": "aler9/rtsp-simple-server"
+    "name": "RTSP Simple Server Add-on",
+    "version": "v0.17.6",
+    "slug": "rtsp_simple_server",
+    "description": "Create RTSP server to broadcast streams, thanks to @aler9 - https://github.com/aler9/rtsp-simple-server",
+    "arch": ["aarch64", "amd64", "armhf", "armv7", "arm64"],
+    "boot": "auto",
+    "legacy": true,
+    "ports": {
+        "8554/tcp": 8554,
+        "1935/tcp": 1935
+    },
+    "startup": "application",
+    "options": {
+        "RTSP_PROTOCOLS": "tcp",
+        "RTSP_PATHS_ALL_RUNONDEMAND": "echo 'incoming'",
+        "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "yes"
+    },
+    "schema": {
+        "RTSP_PROTOCOLS": "list(tcp)",
+        "RTSP_PATHS_ALL_RUNONDEMAND": "list(echo 'incoming')",
+        "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "list(yes)"
+    },
+    "image": "aler9/rtsp-simple-server"
 }
