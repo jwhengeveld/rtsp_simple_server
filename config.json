@@ -10,15 +10,18 @@
         "8554/tcp": 8554,
         "1935/tcp": 1935
     },
+    "map": ["addon_config:rw"],
     "options": {
         "RTSP_PROTOCOLS": "tcp",
         "RTSP_PATHS_ALL_RUNONDEMAND": "echo 'incoming'",
-        "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "yes"
+        "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "yes",
+        "config_file": "/config/rtsp-simple-server.yml"
     },
     "schema": {
         "RTSP_PROTOCOLS": "str",
         "RTSP_PATHS_ALL_RUNONDEMAND": "str",
-        "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "str"
+        "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "str",
+        "config_file": "str"
     },
     "image": "aler9/rtsp-simple-server",
     "ingress": false,
