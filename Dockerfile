@@ -1,6 +1,7 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM bluenviron/mediamtx:latest
 
-RUN mkdir -p /config/
+COPY mediamtx.yml /config/mediamtx.yml
 
-CMD [ "/mediamtx", "/config/mediamtx.yml"]
+VOLUME [ "/config" ]
+
+ENTRYPOINT [ "/mediamtx", "/config/mediamtx.yml" ]
