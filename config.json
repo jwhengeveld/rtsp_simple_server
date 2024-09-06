@@ -12,6 +12,7 @@
         "9997/tcp": 9997
     },
     "map": ["addon_config:rw"],
+    "homeassistant_api": true,
     "options": {},
     "schema": {},
     "image": "ghariosk/mediamtx",
