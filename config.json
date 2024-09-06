@@ -1,29 +1,20 @@
 {
-    "name": "RTSP Simple Server Add-on",
-    "version": "v0.20.1",
+    "name": "Mediamtx Add-on",
+    "version": "v1.9.0",
     "slug": "rtsp_simple_server",
     "description": "Create RTSP server to broadcast streams, thanks to @aler9 - https://github.com/aler9/rtsp-simple-server",
     "arch": ["armv7", "aarch64", "amd64", "armhf"],
     "startup": "application",
     "boot": "auto",
     "ports": {
-        "8554/tcp": 8554,
-        "1935/tcp": 1935
+        "8559/tcp": 8554,
+        "1935/tcp": 1935,
+        "9997/tcp": 9997
     },
     "map": ["addon_config:rw"],
-    "options": {
-        "RTSP_PROTOCOLS": "tcp",
-        "RTSP_PATHS_ALL_RUNONDEMAND": "echo 'incoming'",
-        "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "yes",
-        "config_file": "/config/rtsp-simple-server.yml"
-    },
-    "schema": {
-        "RTSP_PROTOCOLS": "str",
-        "RTSP_PATHS_ALL_RUNONDEMAND": "str",
-        "RTSP_PATHS_ALL_RUNONDEMANDRESTART": "str",
-        "config_file": "str"
-    },
-    "image": "aler9/rtsp-simple-server",
+    "options": {},
+    "schema": {},
+    "image": "bluenviron/mediamtx",
     "ingress": false,
     "panel_icon": "mdi:cctv",
     "panel_title": "RTSP Server",
@@ -31,7 +22,7 @@
     "gpio": false,
     "udev": false,
     "stage": "stable",
-    "healthcheck": "http://localhost:8554/",
+    "healthcheck": "http://localhost:9997/",
     "apparmor": true,
     "timeout": 10,
     "init": true,
