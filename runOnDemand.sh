@@ -7,4 +7,4 @@ curl -H "Authorization: Bearer $SUPERVISOR_TOKEN" \
 
 ffmpeg -loglevel debug -rtsp_transport tcp   \
      -i rtsp://karlgharios:tonymontana@192.168.0.148:8554/front_door \
-     -c:v copy -f rtsp rtsp://localhost:8554/proxy_xxx_front_door
+     -c:v copy -f rtsp rtsp://localhost:8559/proxy_xxx_front_door
