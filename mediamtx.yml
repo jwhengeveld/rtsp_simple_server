@@ -83,24 +83,20 @@ authInternalUsers:
 api: yes
 
 paths:
-    '~^proxy_(.+)$':
-        # If path name is a regular expression, $G1, G2, etc will be replaced
-        # with regular expression groups.
-        source: rtsp://homeassistant.local:8554/$G1
-        sourceOnDemand: yes
-# HTTP-based authentication.
-# URL called to perform authentication. Every time a user wants
-# to authenticate, the server calls this URL with the POST method
-# and a body containing:
-# {
-#   "user": "user",
-#   "password": "password",
-#   "ip": "ip",
-#   "action": "publish|read|playback|api|metrics|pprof",
-#   "path": "path",
-#   "protocol": "rtsp|rtmp|hls|webrtc|srt",
-#   "id": "id",
-#   "query": "query"
-# }
-# If the response code is 20x, authentication is accepted, otherwise
-# it is discarded.
+    '~^proxy_([a-zA-Z0-9]+)_([a-zA-Z0-9_]+)$':
+        # Use publisher as the source
+        source: publisher
+        sourceOnDemandCloseAfter: 10s
+
+        # Command to run when a stream is requested
+        runOnDemand: >
+            curl -X POST -H "Authorization: Bearer $SUPERVISOR_TOKEN" -H "Content-Type: application/json" \
+            -d "{\"entity_id\": \"camera.$G2\"}" \
+            http://supervisor/core/api/services/camera/turn_on
+
+        # Command to run when the stream is no longer needed
+        runOnUnDemand: >
+            curl -X POST -H "Authorization: Bearer ${SUPERVISOR_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d "{\"entity_id\": \"camera.$G2\"}" \
+            http://supervisor/core/api/services/camera/turn_off
