@@ -1,7 +1,7 @@
 {
     "name": "Mediamtx Add-on",
     "version": "1.0.4",
-    "slug": "rtsp_simple_server",
+    "slug": "mediamtxserver",
     "description": "Create RTSP server to broadcast streams, thanks to @aler9 - https://github.com/aler9/rtsp-simple-server",
     "arch": ["armv7", "aarch64", "amd64", "armhf"],
     "startup": "application",
@@ -15,7 +15,7 @@
     "homeassistant_api": true,
     "options": {},
     "schema": {},
-    "image": "ghariosk/mediamtx",
+    "image": "bluenviron/mediamtx",
     "ingress": false,
     "panel_icon": "mdi:cctv",
     "panel_title": "RTSP Server",
