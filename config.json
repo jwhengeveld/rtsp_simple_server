@@ -1,7 +1,7 @@
 {
-    "name": "Mediamtx Add-on",
-    "version": "1.0.4",
-    "slug": "mediamtxserver",
+    "name": "MediaMTX Add-on",
+    "version": "1.9.3",
+    "slug": "mediamtx",
     "description": "Create RTSP server to broadcast streams, thanks to @aler9 - https://github.com/aler9/rtsp-simple-server",
     "arch": ["armv7", "aarch64", "amd64", "armhf"],
     "startup": "application",
